@@ -6,6 +6,8 @@
     <title>Forca</title>
     <script src="js/Game.js" type="application/javascript"></script>
     <script src="js/Word.js" type="application/javascript"></script>
+    <script src="easyapp_core/EasyAppNativeInterfaceSimulator.js" type="application/javascript"></script>
+    <script src="easyapp_core/EasyAppNativeInterfaceCaller.js" type="application/javascript"></script>
     <style>
 * {
     margin: 0;
@@ -24,7 +26,30 @@ canvas {
 <body>
     <canvas width="720" height="1280"></canvas>
     <script>
-new Game(document.querySelector("canvas").getContext("2d"));
+let game = new Game(document.querySelector("canvas").getContext("2d"))
+.changeUserPhoto((game) => {
+    EasyAppNativeInterface.requestCameraPhoto()
+    .then((data) => {
+        game.loadUserPhoto(data);
+        GameStorage.setUserPhoto(data);
+    })
+    .catch((error) => {
+        if(error==-1)
+            alert("Você negou a permissão")
+        else if(error==-2)
+            alert("Você cancelou a foto")
+    });
+})
+.onWin((game, remainingCharCount, life) => {
+    if(life==1) {
+        GameStorage.thatWasClose();
+    }
+    GameStorage.win();
+})
+.onLose((game, remainingCharCount, life) => {
+    GameStorage.lose();
+});
+
     </script>
 </body>
 </html>

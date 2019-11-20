@@ -2,6 +2,7 @@ package org.hiperesp.jogodaforca.core.webview_client;
 
 import android.webkit.ConsoleMessage;
 import android.webkit.WebChromeClient;
+
 /*
 import android.app.AlertDialog;
 import android.content.DialogInterface;

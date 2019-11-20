@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forca</title>
-    <script src="js/Game.js" type="application/javascript"></script>
-    <script src="js/Word.js" type="application/javascript"></script>
     <script src="easyapp_core/EasyAppNativeInterfaceSimulator.js" type="application/javascript"></script>
     <script src="easyapp_core/EasyAppNativeInterfaceCaller.js" type="application/javascript"></script>
+    <script src="js/GameStorage.js" type="application/javascript"></script>
+    <script src="js/Achievement.js" type="application/javascript"></script>
+    <script src="js/Word.js" type="application/javascript"></script>
+    <script src="js/Game.js" type="application/javascript"></script>
     <style>
 * {
     margin: 0;
@@ -41,9 +43,8 @@ let game = new Game(document.querySelector("canvas").getContext("2d"))
     });
 })
 .onWin((game, remainingCharCount, life) => {
-    if(life==1) {
-        GameStorage.thatWasClose();
-    }
+    if(life==1) GameStorage.achievementThatWasClose();
+    if(life==Game.MAX_LIFE) GameStorage.achievementVeryEasy();
     GameStorage.win();
 })
 .onLose((game, remainingCharCount, life) => {

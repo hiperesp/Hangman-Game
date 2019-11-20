@@ -5,10 +5,10 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 
 import org.hiperesp.jogodaforca.MainActivity;
-import org.hiperesp.jogodaforca.core.settings.Settings;
-import org.hiperesp.jogodaforca.core.webview_client.WebViewChromeClient;
 import org.hiperesp.jogodaforca.core.js_bridge.BridgeWebInterface;
 import org.hiperesp.jogodaforca.core.js_native_caller.NativeCaller;
+import org.hiperesp.jogodaforca.core.settings.Settings;
+import org.hiperesp.jogodaforca.core.webview_client.WebViewChromeClient;
 import org.hiperesp.jogodaforca.core.webview_client.WebViewNativeClient;
 
 public class EasyApp {

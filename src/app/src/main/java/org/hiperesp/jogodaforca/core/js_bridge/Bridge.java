@@ -3,8 +3,8 @@ package org.hiperesp.jogodaforca.core.js_bridge;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebView;
 
-import org.hiperesp.jogodaforca.core.js_native_caller.IntentRequestCodeConstants;
 import org.hiperesp.jogodaforca.core.EasyApp;
+import org.hiperesp.jogodaforca.core.js_native_caller.IntentRequestCodeConstants;
 import org.hiperesp.jogodaforca.core.settings.Settings;
 
 class Bridge implements IntentRequestCodeConstants {

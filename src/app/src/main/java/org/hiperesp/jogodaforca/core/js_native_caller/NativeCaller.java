@@ -6,9 +6,12 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.util.Base64;
+
 import androidx.annotation.NonNull;
+
 import org.hiperesp.jogodaforca.MainActivity;
 import org.hiperesp.jogodaforca.core.js_bridge.BridgeWebInterface;
+
 import java.io.ByteArrayOutputStream;
 
 public class NativeCaller implements IntentRequestCodeConstants, ResponseProtocolConstants {
